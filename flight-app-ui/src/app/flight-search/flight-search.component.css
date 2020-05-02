@@ -1,0 +1,18 @@
+.jumbotron {
+  margin-bottom: 0;
+}
+
+.title-flight {
+  margin-bottom: 2rem;
+}
+
+label {
+  float: left;
+  margin-bottom: 0.1em;
+  font-weight: bold;
+}
+
+.btn-primary {
+  float: right;
+  width: 15em;
+}
