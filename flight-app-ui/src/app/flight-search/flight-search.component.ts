@@ -10,9 +10,4 @@ export class FlightSearchComponent implements OnInit {
 
   ngOnInit(): void {}
   searchFlights() {}
-  searchAllFlights() {
-    this.flightService.getAllFlights().subscribe(flight => {
-      console.log(flight);
-    });
-  }
 }

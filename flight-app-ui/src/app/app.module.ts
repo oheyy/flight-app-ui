@@ -7,6 +7,7 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlightService } from './service/flight-service.service';
+import { FlightListResolver } from './service/flight-list-resolver.service';
 import { routes } from './routes';
 @NgModule({
   declarations: [AppComponent, FlightSearchComponent, FlightListComponent],
@@ -16,7 +17,7 @@ import { routes } from './routes';
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [FlightService],
+  providers: [FlightService, FlightListResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
