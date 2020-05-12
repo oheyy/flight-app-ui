@@ -8,16 +8,24 @@ import { FlightListComponent } from './flight-list/flight-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlightService } from './service/flight-service.service';
 import { FlightListResolver } from './service/flight-list-resolver.service';
+import { FlightSearchResolver } from './service/flight-search-resolver.service';
 import { routes } from './routes';
+import { FlightThumbnailComponent } from './flight-thumbnail/flight-thumbnail.component';
 @NgModule({
-  declarations: [AppComponent, FlightSearchComponent, FlightListComponent],
+  declarations: [
+    AppComponent,
+    FlightSearchComponent,
+    FlightListComponent,
+    FlightThumbnailComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [FlightService, FlightListResolver],
+  providers: [FlightService, FlightListResolver, FlightSearchResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

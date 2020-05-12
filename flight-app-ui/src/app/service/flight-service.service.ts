@@ -10,4 +10,18 @@ export class FlightService {
   getAllFlights(): Observable<IFlight[]> {
     return this.http.get<IFlight[]>('api/flight/retrieve/all');
   }
+
+  getFlight(route) {
+    let url = '/api/flight/retrieve?'.concat(
+      'countryFrom=',
+      route.queryParams['countryFrom'],
+      '&countryTo=',
+      route.queryParams['countryTo'],
+      '&departDate=',
+      route.queryParams['departDate'],
+      '&returnDate=',
+      route.queryParams['returnDate']
+    );
+    return this.http.get<IFlight[]>(url);
+  }
 }

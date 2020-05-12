@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route } from '@angular/router';
 import { IFlight } from '../model/IFlight.model';
 @Component({
   selector: 'app-flight-list',
@@ -12,5 +12,7 @@ export class FlightListComponent implements OnInit {
     this.flights = this.actr.snapshot.data['flights'];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('debug: ' + this.actr.snapshot.queryParamMap);
+  }
 }

@@ -1,6 +1,6 @@
-<p>flight-list works!</p>
-<ul>
-  <li *ngFor="let flight of flights">
-    {{ flight.airline }}
-  </li>
-</ul>
+<div class="container">
+  <h2>Flight List</h2>
+  <div class="row" *ngFor="let flight of flights">
+    <app-flight-thumbnail [flight]="flight"></app-flight-thumbnail>
+  </div>
+</div>

@@ -1,23 +1,46 @@
 <div class="jumbotron d-flex align-items-center min-vh-100">
   <div class="container text-center">
     <h2 class="title-flight">Seach for your next flight!</h2>
-    <form (ngSubmit)="searchFlights()">
+    <form
+      [formGroup]="searchFlightForm"
+      (ngSubmit)="searchFlights(searchFlightForm.value)"
+    >
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="inputcontryFrom">From</label>
-          <input type="text" class="form-control" id="inputcontryFrom" />
+          <input
+            type="text"
+            class="form-control"
+            id="inputcontryFrom"
+            formControlName="inputcontryFrom"
+          />
         </div>
         <div class="form-group col-md-3">
           <label for="inputCountryTo">To</label>
-          <input type="text" class="form-control" id="inputCountryTo" />
+          <input
+            type="text"
+            class="form-control"
+            id="inputCountryTo"
+            formControlName="inputCountryTo"
+          />
         </div>
         <div class="form-group col-md-3">
           <label for="inputDepart">Depart</label>
-          <input type="date" class="form-control" id="inputDepart" />
+          <input
+            type="date"
+            class="form-control"
+            id="inputDepart"
+            formControlName="inputDepart"
+          />
         </div>
         <div class="form-group col-md-3">
           <label for="inputReturn">Return</label>
-          <input type="date" class="form-control" id="inputReturn" />
+          <input
+            type="date"
+            class="form-control"
+            id="inputReturn"
+            formControlName="inputReturn"
+          />
         </div>
       </div>
       <a [routerLink]="['/flights/all']">
