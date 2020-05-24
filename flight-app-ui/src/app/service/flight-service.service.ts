@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 
 @Injectable()
 export class FlightService {
-  flight: any = {};
+  flight: IFlight[];
   constructor(private http: HttpClient, private apollo: Apollo) {}
 
   getAllFlights(): Observable<IFlight[]> {
@@ -26,30 +26,23 @@ export class FlightService {
     //   route.queryParams['returnDate']
     // );
     // return this.http.get<IFlight[]>(url);
-    return this.apollo
-      .query<any>({
-        query: gql`
-          query($countryFrom: String, $countryTo: String) {
-            flight(countryFrom: $countryFrom, countryTo: $countryTo) {
-              airline
-              countryFrom
-              countryTo
-              price
-              hours
-              id
-            }
+    return this.apollo.query<any>({
+      query: gql`
+        query($countryFrom: String, $countryTo: String) {
+          flight(countryFrom: $countryFrom, countryTo: $countryTo) {
+            airline
+            countryFrom
+            countryTo
+            price
+            hours
+            id
           }
-        `,
-        variables: {
-          countryFrom: route['countryFrom'],
-          countryTo: route['countryTo']
         }
-      })
-      .subscribe(({ data }) => {
-        if (data.flight) {
-          console.log('YES!');
-          this.flight = data.flight;
-        }
-      });
+      `,
+      variables: {
+        countryFrom: route['countryFrom'],
+        countryTo: route['countryTo']
+      }
+    });
   }
 }

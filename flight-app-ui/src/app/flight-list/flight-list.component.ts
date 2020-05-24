@@ -9,7 +9,7 @@ import { FlightService } from '../service/flight-service.service';
   styleUrls: ['./flight-list.component.css']
 })
 export class FlightListComponent implements OnInit {
-  flights: IFlight[];
+  flights: any[];
   constructor(
     private actr: ActivatedRoute,
     private flightService: FlightService
@@ -21,7 +21,16 @@ export class FlightListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('debug: ' + this.actr.snapshot.queryParamMap);
-    this.flightService.getFlight(this.actr.snapshot.queryParamMap['params']);
+    this.flightService
+      .getFlight(this.actr.snapshot.queryParamMap['params'])
+      .subscribe(({ data }) => {
+        if (data.flight) {
+          console.log('YES!');
+          console.log(data.flight);
+          this.flights = data.flight;
+        }
+      });
+    console.log('DEBUG 3: ' + this.flights);
     // console.log(
     //   'debug1: ' + this.actr.snapshot.queryParamMap['params']['countryFrom']
     // );
