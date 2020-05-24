@@ -7,14 +7,8 @@ import { FlightSearchResolver } from './service/flight-search-resolver.service';
 export const routes: Routes = [
   { path: 'search', component: FlightSearchComponent },
   {
-    path: 'flights/all',
-    component: FlightListComponent,
-    resolve: { flights: FlightListResolver }
-  },
-  {
     path: 'flights',
-    component: FlightListComponent,
-    resolve: { flights: FlightSearchResolver }
+    component: FlightListComponent
   },
   { path: '', redirectTo: '/search', pathMatch: 'full' }
 ];

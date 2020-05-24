@@ -11,6 +11,7 @@ import { FlightListResolver } from './service/flight-list-resolver.service';
 import { FlightSearchResolver } from './service/flight-search-resolver.service';
 import { routes } from './routes';
 import { FlightThumbnailComponent } from './flight-thumbnail/flight-thumbnail.component';
+import { GraphQLModule } from './graphql.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { FlightThumbnailComponent } from './flight-thumbnail/flight-thumbnail.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    GraphQLModule
   ],
   providers: [FlightService, FlightListResolver, FlightSearchResolver],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { FlightService } from './flight-service.service';
 import { Injectable } from '@angular/core';
+import { IFlight } from '../model/IFlight.model';
 
 @Injectable()
 export class FlightSearchResolver implements Resolve<any> {
@@ -8,13 +9,10 @@ export class FlightSearchResolver implements Resolve<any> {
   countryTo: String;
   dateFrom: String;
   dateTo: String;
+  flight: IFlight;
+
   constructor(private flightService: FlightService) {}
   resolve(route: ActivatedRouteSnapshot) {
-    console.log('this is the ' + route.queryParams['countryFrom']);
-    console.log('debug: ' + route.queryParams['countryTo']);
-    console.log('debug2: ' + route.queryParams['departDate']);
-    console.log('debug3: ' + route.queryParams['returnDate']);
-
     return this.flightService.getFlight(route);
   }
 }
