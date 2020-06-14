@@ -12,12 +12,14 @@ import { FlightSearchResolver } from './service/flight-search-resolver.service';
 import { routes } from './routes';
 import { FlightThumbnailComponent } from './flight-thumbnail/flight-thumbnail.component';
 import { GraphQLModule } from './graphql.module';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     FlightSearchComponent,
     FlightListComponent,
-    FlightThumbnailComponent
+    FlightThumbnailComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

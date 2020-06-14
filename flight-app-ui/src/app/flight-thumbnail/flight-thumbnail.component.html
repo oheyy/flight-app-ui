@@ -1,7 +1,14 @@
 <div class="thumbnail">
-  <div>{{ flight.airline }}</div>
-  <div>{{ flight.countryFrom }}</div>
-  <div>{{ flight.countryTo }}</div>
-  <div>{{ flight.price }}</div>
-  <div>{{ flight.hours }}</div>
+  <div class="row">
+    <div class="col-sm-8">
+      <p>{{ flight.airline }}</p>
+      <p>{{ flight.countryFrom }}</p>
+      <p>{{ flight.countryTo }}</p>
+      <p>{{ flight.hours }} hours</p>
+    </div>
+
+    <div class="col-sm-4 center">
+      {{ flight.price | currency: "AUD" }}
+    </div>
+  </div>
 </div>

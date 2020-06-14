@@ -30,12 +30,5 @@ export class FlightListComponent implements OnInit {
           this.flights = data.flight;
         }
       });
-    console.log('DEBUG 3: ' + this.flights);
-    // console.log(
-    //   'debug1: ' + this.actr.snapshot.queryParamMap['params']['countryFrom']
-    // );
-    // console.log(
-    //   'debug2: ' + this.actr.snapshot.queryParamMap['params']['countryTo']
-    // );
   }
 }

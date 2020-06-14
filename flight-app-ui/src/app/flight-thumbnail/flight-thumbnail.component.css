@@ -1,0 +1,11 @@
+.thumbnail {
+  border: black;
+  border-style: solid;
+  width: 50vw;
+  margin-left: 25%;
+}
+.center {
+  text-align: center;
+  /* Center div vertically */
+  margin: auto;
+}

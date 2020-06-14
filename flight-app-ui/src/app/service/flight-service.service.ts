@@ -15,17 +15,6 @@ export class FlightService {
   }
 
   getFlight(route) {
-    // let url = '/api/flight/retrieve?'.concat(
-    //   'countryFrom=',
-    //   route.queryParams['countryFrom'],
-    //   '&countryTo=',
-    //   route.queryParams['countryTo'],
-    //   '&departDate=',
-    //   route.queryParams['departDate'],
-    //   '&returnDate=',
-    //   route.queryParams['returnDate']
-    // );
-    // return this.http.get<IFlight[]>(url);
     return this.apollo.query<any>({
       query: gql`
         query($countryFrom: String, $countryTo: String) {
